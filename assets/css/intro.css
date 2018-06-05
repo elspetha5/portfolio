@@ -29,52 +29,78 @@ body {
 
 #intro {
     color: black;
-    overflow: hidden;
-    animation: envelopeGrow 7s;
+    margin: auto;
+    text-align: center;
+    animation: envelopeGrow 5s;
 }
 
 #name {
     font-size: 250%;
     font-family: 'Francois One', sans-serif;
-    margin: 20% 0 20px;
+    margin: 30% 0 40px;
 }
 
 #summary {
     color: grey;
     font-size: 125%;
-    margin: 20% 0 40%;
+    margin: 0 0 40%;
 }
 
 #profilePic {
-    margin: -80% 0 0 29%;
     width: 150px;
     border-radius: 100%;
     float: left;
-    position: relative;
+    position: fixed;
     border: 10px solid white;
     box-shadow: 0 5px 10px grey;
-    animation: envelopeBounce 8s 3s infinite;
+    transform: translate(-77.5px, -40px);
+    animation: envelopeBounce 8s 6s infinite;
+}
+
+#clickArrow {
+    background-color: rgba(255, 255, 255, 0.747);
+    border-radius: 0 50% 50%;
+    height: 90px;
+    width: 90px;
+    float: left;
+    position: fixed;
+    transform: translate(240px, 50px) rotate(-10deg);
+}
+
+#pssst {
+    float: left;
+    position: fixed;
+    transform: translate(265px, 75px);
+}
+
+#clickMe {
+    float: left;
+    position: fixed;
+    transform: translate(255px, 95px);
+}
+
+#hint {
+    animation: hint 20s;
 }
 
 .crease {
     width: 50%;
     height: 30px;
     float: left;
-    position: relative;
+    position: fixed;
     background-color: white;
     border-top: 1px solid rgb(241, 241, 241);
     box-shadow: 0 5px 10px grey;
-    animation: envelopeBounce 8s 3s infinite;
+    animation: envelopeBounce 8s 6s infinite;
 }
 
 #creaseL {
     transform: skewy(15deg);
-    margin: -70% 0 0;
 }
 
 #creaseR {
     transform: skewy(-15deg);
-    margin: -70% 0 0 50%;
+    margin-left: 50%;
 }
 
 .envelope {
@@ -82,7 +108,7 @@ body {
     width: 50%;
     height: 200px;
     float: left;
-    position: relative;
+    position: fixed;
 }
 
 #envL {
@@ -91,27 +117,30 @@ body {
 
 #envR {
     transform: skewy(-15deg);
+    margin-left: 50%;
 }
 
 #envB {
     background-image: url("../images/halftone-yellow.png");
     width: 100%;
-    height: 150px;
-    margin: -110px 0 0;
+    height: 300px;
+    margin-top: 100px;
     float: left;
+    position: fixed;
+    overflow: hidden;
 }
 
 #mailbox {
-    animation: mailbox 6s forwards;
+    animation: mailbox 4s forwards;
+    position: absolute;
+    z-index: 100;
 }
 
 #box {
     height: 40px;
-    width: 55px;
+    width: 60px;
     background-image: url("../images/squared_metal.png");
-    position: absolute;
-    top: 18%;
-    left: 0;
+    margin: 30px 0 0 -5px;
     box-shadow: 2px 5px 5px grey;
 }
 
@@ -119,9 +148,7 @@ body {
     height: 40px;
     width: 5px;
     background-color: black;
-    position: absolute;
-    top: 18%;
-    left: 50px;
+    margin: -40px 0 0 50px;
     border-radius: 100% 100% 15% 0;
 }
 
@@ -129,9 +156,7 @@ body {
     height: 40px;
     width: 10px;
     background-image: url("../images/squared_metal.png");
-    position: absolute;
-    top: 21%;
-    left: 65px;
+    margin: -20px 0 0 65px;
     border-radius: 100% 100% 15% 0;
     border: .5px solid silver;
     transform: skew(-45deg) rotate(100deg);
@@ -139,7 +164,26 @@ body {
 }
 
 @keyframes mailbox {
-    80% {
+    0% {
+    }
+    5% {
+        /* transform: scale(1.3, 1.3); */
+        transform: rotate(30deg);
+    }
+    10% {
+        /* transform: scale(1, 1); */
+        transform: rotate(-30deg);
+    }
+    15% {
+        transform: rotate(10deg);
+    }
+    20% {
+        transform: rotate(-10deg);
+    }
+    25% {
+        transform: rotate(0deg);
+    }
+    90% {
         opacity: 1;
     }
     100% {
@@ -147,12 +191,27 @@ body {
     }
 }
 
-@keyframes fade-in {
-    from {
+@keyframes envelopeGrow {
+    0% {
+        opacity: 0;
+        transform: translate(-40%, -30%) scale(.1, .03);
+    }
+    39% {
         opacity: 0;
     }
-    to {
+    40% {
         opacity: 1;
+        transform: translate(-40%, -30%) scale(.1, .03);
+    }
+    70% {
+        opacity: 1;
+        transform: translate(-35%, -30%) scale(.1, .03);
+    }
+    85% {
+        transform: scale(.1, .03);
+    }
+    100% {
+        transform: scale(1, 1);
     }
 }
 
@@ -174,26 +233,14 @@ body {
     }
 }
 
-@keyframes envelopeGrow {
+@keyframes hint {
     0% {
         opacity: 0;
-        transform: translate(-40%, -30%) scale(.1, .03);
     }
-    59% {
+    95% {
         opacity: 0;
     }
-    60% {
-        opacity: 1;
-        transform: translate(-40%, -30%) scale(.1, .03);
-    }
-    70% {
-        opacity: 1;
-        transform: translate(-35%, -30%) scale(.1, .03);
-    }
-    85% {
-        transform: scale(.1, .03);
-    }
     100% {
-        transform: scale(1, 1);
+        opacity: 1;
     }
 }
