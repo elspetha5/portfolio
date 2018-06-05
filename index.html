@@ -6,32 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Elspeth Anderson</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/intro.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/portfolio.css" />
     <script src="portfolio.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
         crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed|Francois+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed|Francois+One" rel="stylesheet">
 </head>
 
 <body>
-    <!--  <div id="animation"></div> -->
+
+    <!-- <div id="animation"></div> -->
 
     <div id="intro" class="section">
         <div class="container">
-            <img src="./images/profile.jpg" alt="Profile Picture" id="profilePic">
             <h1 id="name">Elspeth Anderson</h1>
             <p id="summary">
                 I am a full-stack web developer with a passion for design. A background in education has refined me into a creative, problem-solving
-                leader who understands the value of a growth mindset. I am confident in Node.js, JavaScript, GIT, Github,
-                MySQL, MongoDB, HTML, CSS, Bootstrap, Media Queries, APIs, JSON, NPM, and MVC structure. I am a conqueror,
-                and I know that as a member of your team we will be able to conquer the part of the world you’re trying to
-                help right now.
+                leader who understands the value of a growth mindset. I am a conqueror, and I know that as a member of your
+                team we will be able to conquer the part of the world you’re trying to help right now.
             </p>
         </div>
+        <div class="envelope" id="envL"></div>
+        <div class="envelope" id="envR"></div>
+        <div id="envB"></div>
+        <div class="crease" id="creaseL"></div>
+        <div class="crease" id="creaseR"></div>
+        <img src="./images/profile.jpg" alt="Profile Picture" id="profilePic">
     </div>
 
-    <div id="navbar" class="section">
+    <div id="mailbox">
+        <div id="box"></div>
+        <div id="opening"></div>
+        <div id="door"></div>
+    </div>
+
+    <div id="navbar" class="section" hidden>
         <div id="social">
             <a href="https://www.linkedin.com/in/elspeth-anderson-a30576155/" class="socialLink" target="_blank">
                 <i class="fab fa-linkedin-in"></i> LinkedIn</a>
@@ -42,7 +53,7 @@
         </div>
     </div>
 
-    <div id="portfolio" class="section">
+    <div id="portfolio" class="section" hidden>
         <div class="container">
 
             <div class="projects" id="myTown">
@@ -83,7 +94,7 @@
         </div>
     </div>
 
-    <div id="contact" class="section">
+    <div id="contact" class="section" hidden>
         <div class="container">
             <h3>Contact Me</h3>
             <span>elspetha@gmail.com | (480) 444-8979</span>
